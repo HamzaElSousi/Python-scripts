@@ -1,5 +1,5 @@
 # This scripts is designed by Hamza El Sousi
-# Version 1.0
+# Version 2.0
 # How to reach me: 
 
 """
@@ -71,6 +71,7 @@ def create_subplots(x, y, labels):
     axes[1, 0].scatter(x, y, color='red', marker='o')
     axes[1, 0].set_title('Scatter Plot')
 
+    labels = [f'Data Point {i+1}' for i in range(len(y))]
     axes[1, 1].pie(y, labels=labels, autopct='%1.1f%%', startangle=90)
     axes[1, 1].set_title('Pie Chart')
 
@@ -104,7 +105,6 @@ create_histogram(data)
 
 
 # If the user wants a Pie chart:
-#create_pie_chart(range(1, len(data) + 1), data)
 create_pie_chart([f'Data Point {i+1}' for i in range(len(data))], data)
 
 # If the user wants a Dashboard of subplots:
@@ -114,7 +114,6 @@ create_subplots(range(1, len(data) + 1), data, ["Label 1", "Label 2", ...])
 
 
 # Remove the """ from bellow and end of script for a labled tempreture and humidity grapher
-
 """
 # Function to create line plot with timestamps
 def create_line_plot_with_timestamps(timestamps, data, title, x_label, y_label, color, label):
@@ -128,7 +127,7 @@ def create_line_plot_with_timestamps(timestamps, data, title, x_label, y_label, 
     plt.tight_layout()
     plt.show()
 
-# Collect temperature and humidity data (You can change the labels but test the result)
+# Collect temperature and humidity data
 timestamps = []
 temperature = []
 humidity = []
